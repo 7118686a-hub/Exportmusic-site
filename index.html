@@ -119,7 +119,7 @@ button.pbtn.reg{background:#E10600;color:#fff}
 .foot{text-align:center;font-family:sans-serif;font-size:13px;color:#888;padding:14px}.contact a{color:#fff;text-decoration:none}.malt a{color:inherit}a.b2,a.pill{text-decoration:none;display:inline-block}.skip{position:absolute;right:8px;top:-60px;z-index:100;background:#fff;color:#000;padding:10px 16px;font-size:22px;font-weight:700}.skip:focus{top:8px}
 :focus-visible{outline:3px solid #ffd400;outline-offset:2px}
 .foot a{color:#ccc}
-.a11y-btn{position:fixed;bottom:16px;left:16px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1a56db;color:#fff;border:3px solid #fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.a11y-btn{touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;position:fixed;bottom:16px;left:16px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1a56db;color:#fff;border:3px solid #fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .a11y-panel{position:fixed;bottom:84px;left:16px;z-index:61;width:min(320px,calc(100vw - 32px));background:#fff;color:#111;border-radius:10px;padding:14px;font-family:Arial,sans-serif;direction:rtl;box-shadow:0 8px 30px rgba(0,0,0,.5)}
 .a11y-panel[hidden],.a11y-st-wrap[hidden]{display:none}
 .a11y-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.a11y-head h2{margin:0;font-size:20px;color:#111}
@@ -169,6 +169,10 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 .lroll img:nth-child(3n+1){border-color:#E10600}
 .lreel:hover .lroll{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.lroll{animation:none}.lreel{overflow-x:auto}}html.a-still .lreel{overflow-x:auto}
+.contact{padding:22px 20px 24px}.contact h2{font-size:44px;margin-bottom:10px}.contact .l{font-size:20px;line-height:1.5}
+.contact .hrs{font-size:18px;padding:3px 10px;margin-top:8px}.contact .cta{font-size:22px;padding:10px;margin-top:12px}
+.foot{font-size:12px;padding:10px 10px 84px}
+.a11y-btn.dragging{cursor:grabbing;transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.6)}
 .note{font-family:sans-serif;font-size:12px;color:#888;text-align:center;padding:10px}
 </style></head><body><a class="skip" href="#main">דילוג לתוכן הראשי</a><div class="wrap" id="main">
 <div class="hero"><div class="top"><div class="logo">EXPORT<b> MUSIC</b></div><a class="pill" href="#" onclick="alert('האזור האישי לתלמידים יעלה בקרוב');return false;">אזור אישי</a></div>
@@ -219,7 +223,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 <figure><div class="plg" style="background:#fff"><img src="p-clal.png" alt="כלל ביטוח ופיננסים"></div><figcaption>כלל ביטוח</figcaption></figure>
 <figure class="wide"><div class="plg" style="background:#000"><img src="p-party.png" alt="Party Events – רשת מועדונים"></div><figcaption>Party Events · רשת מועדונים</figcaption></figure>
 </div></section>
-<div class="contact" id="contact"><h2>בוא<br>תנגן.</h2>
+<div class="contact" id="contact"><h2>יוצאים<br>לדרך.</h2>
 <div class="l">בן יהודה 34, מגדל העיר, ירושלים<br><a href="tel:+972555645448">055-5645448</a><br><a href="tel:+972547698938">054-7698938</a><br><a href="mailto:exportmusic4@gmail.com">exportmusic4@gmail.com</a></div><div class="hrs">ימי פעילות: א׳–ה׳ · <span dir="ltr">09:00–21:00</span></div><a class="cta" href="#plans">להרשמה לקורס ←</a></div>
 <div class="mod" id="mod" hidden><div class="box" role="dialog" aria-modal="true" aria-labelledby="mt">
 <button class="x" type="button" aria-label="סגירה">×</button>
@@ -236,7 +240,7 @@ html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http:
 <a class="wa-float" href="https://wa.me/972555645448?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%95%D7%A8%D7%A1%20%D7%94%D7%93%D7%99%D7%92%D7%B3%D7%99%D7%99" target="_blank" rel="noopener" aria-label="שליחת הודעה בוואטסאפ">
 <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path fill="#fff" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4-.6-5.7-1.6l-.4-.2-3.9 1.2 1.2-3.7-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.3 16 26.3zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2.7 1.1 3.2.9 3.8.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
 </a>
-<button type="button" class="a11y-btn" id="a11y-btn" aria-label="תפריט נגישות" aria-expanded="false" aria-controls="a11y-panel">
+<button type="button" class="a11y-btn" id="a11y-btn" aria-label="תפריט נגישות (אפשר לגרור את הכפתור)" aria-expanded="false" aria-controls="a11y-panel">
 <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M4 8h16M12 8v6M8 22l4-8 4 8"/></svg>
 </button>
 <div class="a11y-panel" id="a11y-panel" role="dialog" aria-modal="false" aria-labelledby="a11y-h" hidden>
@@ -283,7 +287,16 @@ const apply=()=>{W.style.zoom=1+st.z*0.12;["contrast","gray","links","font","sti
 apply();const cn=document.querySelector(".cnt");if(cn){const to=+cn.dataset.to,f=n=>n.toLocaleString("en-US");const run=()=>{if(matchMedia("(prefers-reduced-motion: reduce)").matches||H.classList.contains("a-still")){cn.textContent=f(to);return}const t0=performance.now(),d=2200;const st=t=>{const p=Math.min((t-t0)/d,1),e=1-Math.pow(1-p,3);cn.textContent=f(Math.round(to*e));if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)};if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){io.disconnect();run()}},{threshold:.5});io.observe(cn)}else cn.textContent=f(to)}
 
 const openP=o=>{P.hidden=!o;B.setAttribute("aria-expanded",o);if(o)P.querySelector("button").focus();else B.focus()};
-B.addEventListener("click",()=>openP(P.hidden));document.getElementById("a11y-close").addEventListener("click",()=>openP(false));
+let drag=null,moved=false;
+const place=(x,y)=>{const w=B.offsetWidth,h=B.offsetHeight;x=Math.max(6,Math.min(innerWidth-w-6,x));y=Math.max(6,Math.min(innerHeight-h-6,y));B.style.left=x+"px";B.style.top=y+"px";B.style.right="auto";B.style.bottom="auto";return[x,y]};
+const placeP=()=>{const r=B.getBoundingClientRect(),pw=P.offsetWidth||320,ph=P.offsetHeight||420;let x=Math.min(Math.max(8,r.left),innerWidth-pw-8),y=r.top-ph-10;if(y<8)y=Math.min(r.bottom+10,innerHeight-ph-8);P.style.left=x+"px";P.style.top=Math.max(8,y)+"px";P.style.bottom="auto"};
+try{const p=JSON.parse(localStorage.getItem("em-a11y-pos"));if(p)place(p[0],p[1])}catch(e){}
+B.addEventListener("pointerdown",e=>{const r=B.getBoundingClientRect();drag={dx:e.clientX-r.left,dy:e.clientY-r.top,sx:e.clientX,sy:e.clientY};moved=false;B.setPointerCapture(e.pointerId)});
+B.addEventListener("pointermove",e=>{if(!drag)return;if(!moved&&Math.hypot(e.clientX-drag.sx,e.clientY-drag.sy)<8)return;moved=true;B.classList.add("dragging");const p=place(e.clientX-drag.dx,e.clientY-drag.dy);if(!P.hidden)placeP();drag.last=p});
+const end=()=>{if(drag&&moved&&drag.last){try{localStorage.setItem("em-a11y-pos",JSON.stringify(drag.last))}catch(e){}}drag=null;B.classList.remove("dragging")};
+B.addEventListener("pointerup",end);B.addEventListener("pointercancel",end);
+B.addEventListener("click",e=>{if(moved){e.preventDefault();moved=false;return}openP(P.hidden);if(!P.hidden)placeP()});
+addEventListener("resize",()=>{const r=B.getBoundingClientRect();if(B.style.left)place(r.left,r.top);if(!P.hidden)placeP()});document.getElementById("a11y-close").addEventListener("click",()=>openP(false));
 P.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const a=b.dataset.a,t=b.dataset.t;
 if(a==="font-up")st.z=Math.min(st.z+1,4);if(a==="font-down")st.z=Math.max(st.z-1,-1);if(a==="reset")st={z:0,t:[]};
 if(t)st.t=st.t.includes(t)?st.t.filter(x=>x!==t):[...st.t,t];if(a||t)apply()});
